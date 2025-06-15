@@ -1,67 +1,620 @@
+html
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: rgba(233, 241, 255, 0.4); /* Light blue background */
+        color: #333;
+        scroll-behavior: smooth;
+    }
+    
+    .gradient-bg {
+        background: linear-gradient(135deg, #0a4a8a 0%, #2e71cc 100%); /* Blue gradient */
+    }
+    
+    .stat-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .view-option {
+        transition: all 0.3s ease;
+    }
+    
+    .view-option:hover {
+        transform: translateY(-3px);
+    }
+    
+    .quote-mark {
+        font-size: 4rem;
+        line-height: 0;
+        position: absolute;
+        color: rgba(46, 113, 204, 0.15); /* Blue quote marks */
+    }
+    
+    .quote-mark.left {
+        top: 20px;
+        left: 10px;
+    }
+    
+    .quote-mark.right {
+        bottom: 0;
+        right: 10px;
+    }
+    
+    .toc-link {
+        transition: all 0.2s ease;
+    }
+    
+    .toc-link:hover {
+        color: #2e71cc; /* Blue hover */
+        transform: translateX(3px);
+    }
+    
+    .toc-link.active {
+        color: #2e71cc; /* Blue active */
+        font-weight: 500;
+    }
+    
+    .sticky-toc {
+        position: sticky;
+        top: 2rem;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .back-to-top:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Increased line height for main title */
+    .main-title {
+        line-height: 1.8; /* Increased line height */
+    }
+    
+    /* Back button styles */
+    .back-button {
+        transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+        transform: translateX(-5px);
+    }
+    
+    /* Navigation styles */
+    .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+    
+    .navbar {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+</style>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="https://teslacadena.com/about-me" class="nav-link">About Me</a>
+                <a href="https://linkedin.com/in/teslacadena" class="nav-link">LinkedIn</a>
+                <a href="https://teslacadena.com/services" class="nav-link">Services</a>
+                <a href="https://calendly.com/teslacadena/one-on-one-chat?month=2025-06" class="nav-link">Collaborate</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation (Hidden by default) -->
+        <div class="md:hidden hidden mt-3 pb-2" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="https://teslacadena.com/about-me" class="block py-2 hover:bg-blue-700 px-2 rounded">About Me</a>
+                <a href="https://linkedin.com/in/teslacadena" class="block py-2 hover:bg-blue-700 px-2 rounded">LinkedIn</a>
+                <a href="https://teslacadena.com/services" class="block py-2 hover:bg-blue-700 px-2 rounded">Services</a>
+                <a href="https://calendly.com/teslacadena/one-on-one-chat?month=2025-06" class="block py-2 hover:bg-blue-700 px-2 rounded">Collaborate</a>
+            </div>
+        </div>
+    </div>
+</nav>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Awty International School Case Study</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f9ff;
-            margin: 0;
-            padding: 40px;
-            color: #1e293b;
+<!-- Hero Section (with padding-top to account for navbar) -->
+<header id="top" class="gradient-bg text-white py-20 px-4 md:px-0 pt-28">
+    <div class="container mx-auto max-w-5xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 main-title">Awty Admissions Omni-Channel Campaign (2020)</h1>
+        <p class="text-xl opacity-90 max-w-3xl mb-8">How I drove international student applications through strategic marketing during the COVID-19 pandemic.</p>
+        
+        <!-- Back to Portfolio Button (moved below the description) -->
+        <a href="https://teslacadena.com" class="inline-flex items-center text-white bg-white bg-opacity-20 hover:bg-opacity-30 py-2 px-4 rounded-lg back-button">
+            <i class="fas fa-arrow-left mr-2"></i>
+            Go Back to Portfolio
+        </a>
+    </div>
+</header>
+
+<!-- View Options -->
+<section class="bg-white py-8 px-4 md:px-0 border-b">
+    <div class="container mx-auto max-w-5xl">
+        <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                Ways to View This Case Study
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="https://issuu.com/teslacannon/docs/awty_admissions_campaign" target="_blank" class="view-option bg-white p-5 rounded-lg shadow-md flex flex-col items-center text-center hover:bg-gray-50">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-book-open text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Read as Booklet</h4>
+                    <p class="text-sm text-gray-600">Full detailed flipbook</p>
+                </a>
+                <a href="#case-content" class="view-option bg-white p-5 rounded-lg shadow-md flex flex-col items-center text-center hover:bg-gray-50">
+                    <div class="bg-blue-100 p-3 rounded-full mb-3">
+                        <i class="fas fa-scroll text-blue-600 text-xl"></i>
+                    </div>
+                    <h4 class="font-medium mb-1">Scroll Below</h4>
+                    <p class="text-sm text-gray-600">Read abbreviated version here</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content with Table of Contents -->
+<div id="case-content" class="container mx-auto max-w-5xl py-12 px-4 md:px-0">
+    <div class="flex flex-col md:flex-row gap-8">
+        <!-- Table of Contents (Sidebar) -->
+        <div class="md:w-1/4">
+            <div class="bg-white p-6 rounded-lg shadow-md sticky-toc">
+                <h3 class="text-lg font-semibold mb-4 pb-2 border-b border-gray-200">Table of Contents</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <a href="#overview" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#my-role" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            My Role
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#objectives" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Objectives
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#challenges" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Challenges & Solutions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#execution" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Execution
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#results" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Results
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#takeaways" class="toc-link flex items-center text-gray-700 hover:text-blue-600">
+                            <i class="fas fa-circle text-xs mr-2 text-blue-500"></i>
+                            Personal Takeaways
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="md:w-3/4">
+            <!-- Overview Section -->
+            <section id="overview" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Overview</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Company Background</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        The Awty International School in Houston, Texas, is recognized for its global perspective and exceptional education. Committed to fostering academic and cultural growth, Awty offers an international curriculum in a vibrant, diverse community. The school aims to develop responsible global citizens and future leaders.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Target Audience</h3>
+                    <p class="text-lg leading-relaxed">
+                        Awty caters to a global audience, primarily expatriate families, valuing diversity and inclusivity. Marketing communications were provided in multiple languages to accommodate this diverse demographic.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- My Role Section -->
+            <section id="my-role" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">My Role</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="text-lg leading-relaxed mb-6">
+                        I managed a wide array of creative and strategic tasks, including designing marketing materials, updating the website, producing campaign videos, and capturing photos. Collaborating with communications and admissions departments, I played a pivotal role in content planning and execution to boost school applications.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-palette text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Design</h3>
+                            </div>
+                            <p>Created marketing materials and updated website design</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-video text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Production</h3>
+                            </div>
+                            <p>Produced campaign videos and captured photography</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-users text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Collaboration</h3>
+                            </div>
+                            <p>Worked with communications and admissions teams</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Objectives Section -->
+            <section id="objectives" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Objectives</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-chart-line text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Increase Applications</h3>
+                        </div>
+                        <p class="leading-relaxed">
+                            The campaign aimed to attract students aligned with Awty's values, enhancing the school's desirability and selectivity by increasing application numbers.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-bullhorn text-blue-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold">Enhance Brand Visibility</h3>
+                        </div>
+                        <p class="leading-relaxed">
+                            We communicated the school's core values and educational philosophy through various strategic channels, strengthening its local and international reputation.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Challenges and Solutions Section -->
+            <section id="challenges" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Challenges & Solutions</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">Competition and Cost Perception</h3>
+                    <p class="leading-relaxed mb-4">
+                        To stand out, the campaign highlighted Awty's unique offerings, such as its diverse community and dual Baccalauréat programs. We shared success stories and testimonials to underscore the school's value. Financial aid options were prominently displayed to address cost concerns.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">Highlighted unique programs</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">Shared success stories</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">Promoted financial aid</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-700">COVID-19 Adaptation</h3>
+                    <p class="leading-relaxed mb-4">
+                        In response to the pandemic, Awty transitioned swiftly to remote learning. I contributed to a COVID-19 microsite and organized live streams and webinars to maintain engagement. A creative social media campaign featuring the school mascot kept spirits high.
+                    </p>
+                    
+                    <div class="flex flex-col md:flex-row gap-4 mt-6">
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">COVID-19 microsite</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">Virtual events</span>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg flex-1">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-blue-600 mr-2"></i>
+                                <span class="font-medium">Mascot social campaign</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Execution Section -->
+            <section id="execution" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Execution</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <p class="leading-relaxed mb-6">
+                        Key enrollment periods were identified to align content with decision-making timelines. A consistent narrative was maintained across all channels, using multimedia production to capture Awty's essence. Materials were multilingual, ensuring broad reach.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-calendar-alt text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Strategic Timing</h3>
+                            </div>
+                            <p>Aligned with key enrollment decision periods</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-film text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Multimedia Approach</h3>
+                            </div>
+                            <p>Videos, photos, and digital content across channels</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="bg-blue-100 p-2 rounded-full mr-3">
+                                    <i class="fas fa-language text-blue-600"></i>
+                                </div>
+                                <h3 class="font-semibold">Multilingual Content</h3>
+                            </div>
+                            <p>Materials created in multiple languages for global reach</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Results Section -->
+            <section id="results" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Results</h2>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="bg-blue-100 p-4 rounded-full">
+                            <i class="fas fa-trophy text-blue-600 text-3xl"></i>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xl text-center leading-relaxed mb-6">
+                        The campaign exceeded expectations, filling enrollment slots and generating a waitlist. It validated Awty's appeal and effectiveness in engaging prospective students and families.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div class="bg-blue-50 p-5 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">100%</div>
+                            <p class="font-medium">Enrollment Slots Filled</p>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-5 rounded-lg text-center">
+                            <div class="text-3xl font-bold text-blue-700 mb-2">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <p class="font-medium">Waitlist Generated</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Personal Takeaways Section -->
+            <section id="takeaways" class="mb-16 scroll-mt-24">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-2xl font-bold">Personal Takeaways</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-globe text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Global Marketing Perspective</h3>
+                        </div>
+                        <p class="leading-relaxed">
+                            I honed my ability to communicate with diverse audiences, considering cultural nuances and perspectives.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-chess text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Strategic Content Planning</h3>
+                        </div>
+                        <p class="leading-relaxed">
+                            I gained insights into strategic content timing and impact, enhancing my planning skills.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-users-cog text-blue-600"></i>
+                            </div>
+                            <h3 class="font-semibold">Collaborative Precision</h3>
+                        </div>
+                        <p class="leading-relaxed">
+                            Working with diverse teams, I improved my ability to gather and share data, achieving common marketing goals.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-8 rounded-lg shadow-lg mb-16">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold mb-4">Want to see more of my work?</h2>
+                    <p class="mb-6">Check out my other case studies or get in touch to discuss your project.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="https://teslacadena.com" target="_blank" class="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-briefcase mr-2"></i> View Portfolio
+                        </a>
+                        <a href="https://calendly.com/teslacadena" target="_blank" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-calendar-alt mr-2"></i> Schedule a Call
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- Back to Top Button -->
+<a href="#top" class="back-to-top bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Active link highlighting for TOC
+    const sections = document.querySelectorAll('section[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.clientHeight;
+            
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Show/hide back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
         }
-        h1, h2, h3 {
-            color: #1e40af;
-        }
-        section {
-            margin-bottom: 40px;
-        }
-        .tag {
-            display: inline-block;
-            background-color: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 8px;
-            margin: 4px 4px 0 0;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Awty International School Admissions Campaign</h1>
-
-    <section>
-        <h2>Overview</h2>
-        <p><strong>Objective:</strong> Increase applications and enhance visibility for Houston’s most diverse private institution offering both the French and International Baccalauréat.</p>
-        <p><strong>Responsibilities:</strong> Led creative strategy across web, print, video, and social platforms. Produced multilingual collateral, testimonial videos, and coordinated strategic content rollouts aligned with enrollment cycles.</p>
-    </section>
-
-    <section>
-        <h2>Challenges</h2>
-        <ul>
-            <li><strong>Competitive Landscape:</strong> Positioned Awty against elite private schools by emphasizing dual diplomas, cultural diversity, and elite university placements.</li>
-            <li><strong>Perceived Cost:</strong> Emphasized scholarships and long-term value through testimonials and transparent financial aid messaging.</li>
-            <li><strong>COVID-19:</strong> Supported a pivot to remote engagement with a dedicated microsite, livestreams, and mascot-led social media campaigns.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Results</h2>
-        <ul>
-            <li><strong>Enrollment Goals Surpassed:</strong> All seats filled with a waitlist established.</li>
-            <li><strong>Brand Visibility:</strong> Increased community engagement and strengthened local and international reputation.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Personal Takeaways</h2>
-        <ul>
-            <li><strong>Cross-Cultural Communication:</strong> Created messaging that resonated with international audiences in multiple languages.</li>
-            <li><strong>Strategic Timing:</strong> Aligned campaign rollouts with admissions periods for maximum response.</li>
-        </ul>
-    </section>
-
-</body>
-</html>
+    });
+</script>
